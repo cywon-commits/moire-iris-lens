@@ -1,0 +1,18 @@
+tw+uni1 nodes 4 E 46.0555 nit 250
+   r= 1.5 n_ok 4 mean gaps [56.2, 71.39, 57.39, 51.39, 65.12, 58.51] max std 0.0
+   r= 2.5 n_ok 4 mean gaps [53.39, 72.57, 56.95, 50.52, 68.85, 57.72] max std 0.0
+   r= 4.0 n_ok 4 mean gaps [51.44, 73.7, 56.63, 49.65, 71.38, 57.19] max std 0.0
+   r= 6.0 n_ok 4 mean gaps [50.34, 74.39, 56.44, 49.15, 72.85, 56.83] max std 0.0
+   wall directions at r=4 (deg): [37.9, 89.3, 163.0, 219.6, 269.3, 340.7]
+tw+uni2 nodes 4 E 52.4701 nit 294
+   r= 1.5 n_ok 4 mean gaps [46.55, 72.55, 56.42, 50.79, 79.07, 54.63] max std 0.0
+   r= 2.5 n_ok 4 mean gaps [44.84, 78.82, 53.8, 47.33, 82.78, 52.45] max std 0.0
+   r= 4.0 n_ok 4 mean gaps [43.11, 84.36, 51.01, 44.65, 86.75, 50.12] max std 0.0
+   r= 6.0 n_ok 4 mean gaps [41.97, 88.38, 48.67, 42.99, 89.93, 48.07] max std 0.0
+   wall directions at r=4 (deg): [45.7, 88.8, 173.2, 224.2, 268.8, 355.6]
+tw+uni3 nodes 4 E 62.0622 nit 274
+   r= 1.5 n_ok 4 mean gaps [44.8, 78.75, 56.45, 44.8, 78.75, 56.45] max std 0.0
+   r= 2.5 n_ok 4 mean gaps [41.29, 85.91, 52.8, 41.29, 85.91, 52.8] max std 0.0
+   r= 4.0 n_ok 4 mean gaps [47.39, 38.38, 94.23, 47.39, 38.38, 94.23] max std 0.0
+   r= 6.0 n_ok 4 mean gaps [40.68, 36.7, 102.61, 40.68, 36.7, 102.61] max std 0.0
+   wall directions at r=4 (deg): [3.1, 50.4, 88.8, 183.1, 230.4, 268.8]

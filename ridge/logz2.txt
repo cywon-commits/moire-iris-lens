@@ -1,0 +1,4 @@
+0.1 h2 max 0.5638 |h1+h3| 0.3286 breathing 0.1167 4120
+0.2 h2 max 0.4412 |h1+h3| 0.263 breathing 0.1224 4232
+0.4 h2 max 0.0975 |h1+h3| 0.0542 breathing 0.1318 2813
+1.0 h2 max 0.0 |h1+h3| 0.0 breathing 0.1339 631

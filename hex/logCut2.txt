@@ -1,0 +1,4 @@
+loop minima (u-space): 10  shared: [(np.float64(1.0), np.float64(0.0)), (np.float64(1.0), np.float64(0.57735))]
+cut=  2.00  nodes=2  D= 18.50  Vpk=[np.float64(8.68), np.float64(8.54)]  pos=[(np.float64(-9.2), np.float64(-3.8)), (np.float64(9.2), np.float64(-3.8))]  nit=1596 16s
+cut=  4.00  nodes=2  D= 19.00  Vpk=[np.float64(8.96), np.float64(8.94)]  pos=[(np.float64(-9.5), np.float64(-3.8)), (np.float64(9.5), np.float64(-3.8))]  nit=1783 20s
+cut=  8.00  nodes=2  D= 19.50  Vpk=[np.float64(8.26), np.float64(8.63)]  pos=[(np.float64(-9.8), np.float64(-4.0)), (np.float64(9.8), np.float64(-4.0))]  nit=1595 19s

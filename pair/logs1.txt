@@ -1,0 +1,6 @@
+none_d0.0_V0.005_a0_x_sym_lam-0.5 E 131.4215 nit 2651 249 s
+pair_d8.0_V0.005_a0_x_sym_lam-0.5 E 158.4649 nit 2875 283 s
+R_d8.0_V0.005_a0_x_sym_lam-0.5 E 146.2061 nit 3023 308 s
+pair_d26.0_V0.005_a0_x_sym_lam-0.5 E 161.9066 nit 2918 294 s
+R_d26.0_V0.005_a0_x_sym_lam-0.5 E 146.3738 nit 2935 287 s
+pair_d56.0_V0.005_a0_x_sym_lam-0.5 E 161.2889 nit 3279 323 s

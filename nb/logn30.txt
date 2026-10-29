@@ -1,0 +1,4 @@
+cell30 pore= 0.0a  free nodes within 10a of defect: 1 [(np.float64(0.0), np.float64(0.0))]  E=367.053 nit=1782 85s
+cell30 pore= 1.5a  free nodes within 10a of defect: 0 []  E=366.065 nit=2064 101s
+cell30 pore= 2.5a  free nodes within 10a of defect: 0 []  E=365.374 nit=1804 91s
+cell30 pore= 3.5a  free nodes within 10a of defect: 0 []  E=368.462 nit=1381 66s

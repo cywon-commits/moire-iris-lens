@@ -1,0 +1,12 @@
+iso_only nodes 6 E 78.8558 nit 383
+   r= 1.5 n_ok 6 mean gaps [61.65, 63.08, 61.68, 59.51, 56.68, 57.4] max std 0.0
+   r= 2.5 n_ok 6 mean gaps [61.92, 61.71, 59.98, 58.28, 58.09, 60.01] max std 0.0
+   r= 4.0 n_ok 6 mean gaps [61.0, 61.47, 60.49, 59.38, 58.56, 59.12] max std 0.0
+   r= 6.0 n_ok 6 mean gaps [60.2, 60.96, 60.82, 59.95, 58.99, 59.1] max std 0.0
+   wall directions at r=4 (deg): [37.2, 98.2, 159.7, 220.2, 279.5, 338.1]
+tw+iso3 nodes 14 E 126.546 nit 363
+   r= 1.5 n_ok 14 mean gaps [59.9, 58.98, 59.38, 59.79, 60.66, 61.28] max std 3.05
+   r= 2.5 n_ok 14 mean gaps [60.37, 59.61, 60.02, 60.37, 59.61, 60.02] max std 2.13
+   r= 4.0 n_ok 14 mean gaps [59.96, 60.0, 60.05, 59.96, 60.0, 60.05] max std 1.64
+   r= 6.0 n_ok 14 mean gaps [60.0, 60.01, 60.0, 60.0, 60.01, 60.0] max std 1.08
+   wall directions at r=4 (deg): [26.6, 84.8, 145.1, 207.5, 269.3, 328.8]

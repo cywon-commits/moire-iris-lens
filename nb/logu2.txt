@@ -1,0 +1,1 @@
+cell30 uniform start, pore 3.5 E= 364.655  loop (walls,Q) at +2a: (6, 1)

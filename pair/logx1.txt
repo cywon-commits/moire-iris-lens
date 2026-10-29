@@ -1,0 +1,6 @@
+pair_d8.0_V0.005_a0_x_xm E 250.2912 nit 2603 210 s
+pair_d8.0_V0.005_a0_x_c2 E 247.2517 nit 2979 243 s
+pair_d26.0_V0.005_a0_x_xm E 250.8913 nit 2573 216 s
+pair_d26.0_V0.005_a0_x_c2 E 250.061 nit 3340 242 s
+pair_d56.0_V0.005_a0_x_xm E 250.017 nit 2523 155 s
+pair_d56.0_V0.005_a0_x_c2 E 248.3319 nit 2889 181 s

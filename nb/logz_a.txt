@@ -1,0 +1,2 @@
+SP rho=6.0 H0=1.5: Hmax=1.50 r_edge=5.0 loops=[(np.float64(5.52), 10, 2), (np.float64(6.02), 10, 2), (np.float64(7.02), 10, 2), (np.float64(8.02), 10, 2)]
+AA rho=9.0 H0=2.5: Hmax=2.50 r_edge=8.1 loops=[(np.float64(8.6), 6, 1), (np.float64(9.1), 6, 1), (np.float64(10.1), 6, 1), (np.float64(11.1), 18, 1)]

@@ -1,0 +1,8 @@
+loop minima (u-space): 10  shared: [(np.float64(1.0), np.float64(0.0)), (np.float64(1.0), np.float64(0.57735))]
+pin=  0.50  nodes=2  D= 16.75  Vpk=[np.float64(8.18), np.float64(8.83)]  pos=[(np.float64(-8.0), np.float64(-4.2)), (np.float64(8.8), np.float64(-4.2))]  nit=3275 30s
+pin=  1.00  nodes=2  D= 16.51  Vpk=[np.float64(8.87), np.float64(8.71)]  pos=[(np.float64(-7.5), np.float64(4.5)), (np.float64(9.0), np.float64(4.0))]  nit=2032 18s
+pin=  1.50  nodes=2  D= 10.44  Vpk=[np.float64(8.77), np.float64(8.95)]  pos=[(np.float64(-10.0), np.float64(-2.2)), (np.float64(0.2), np.float64(-0.2))]  nit=1506 14s
+pin=  2.00  nodes=2  D=  9.91  Vpk=[np.float64(8.52), np.float64(9.0)]  pos=[(np.float64(-9.8), np.float64(-2.0)), (np.float64(0.0), np.float64(-0.2))]  nit=1421 14s
+pin=  3.00  nodes=2  D=  9.95  Vpk=[np.float64(8.42), np.float64(9.0)]  pos=[(np.float64(-9.8), np.float64(2.0)), (np.float64(0.0), np.float64(0.0))]  nit=1373 13s
+pin=  4.00  nodes=2  D= 10.20  Vpk=[np.float64(8.91), np.float64(9.0)]  pos=[(np.float64(-10.0), np.float64(2.0)), (np.float64(0.0), np.float64(0.0))]  nit=1315 12s
+pin=  6.00  nodes=2  D= 10.25  Vpk=[np.float64(8.6), np.float64(9.0)]  pos=[(np.float64(-10.0), np.float64(-2.2)), (np.float64(0.0), np.float64(0.0))]  nit=1300 12s

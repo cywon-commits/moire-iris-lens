@@ -1,0 +1,4 @@
+wall C= 0.0 rh 2.2 E 63.037 nit 2360 194 s
+wall C= 3.0 rh 2.2 E 76.868 nit 2601 227 s
+wall C= 8.0 rh 3.39 E 100.711 nit 2204 190 s
+AA C= 15.0 rh 4.65 E 138.188 nit 2582 216 s

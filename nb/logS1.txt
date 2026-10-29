@@ -1,0 +1,2 @@
+alpha 0.0 C 4.0 shear 0.5 E 139.68 nit 2689 286 s
+alpha 0.0 C 0.0 shear 0.5 E 124.957 nit 2714 287 s

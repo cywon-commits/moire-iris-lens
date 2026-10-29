@@ -1,0 +1,4 @@
+cell31 pore= 0.0a  free nodes within 10a of defect: 3 [(np.float64(0.0), np.float64(-12.4)), (np.float64(0.0), np.float64(0.0)), (np.float64(0.0), np.float64(12.4))]  E=367.063 nit=2501 131s
+cell31 pore= 0.8a  free nodes within 10a of defect: 3 [(np.float64(0.0), np.float64(-12.4)), (np.float64(0.0), np.float64(0.0)), (np.float64(0.0), np.float64(12.4))]  E=366.647 nit=3439 180s
+cell31 pore= 1.5a  free nodes within 10a of defect: 1 [(np.float64(0.0), np.float64(-11.6))]  E=366.640 nit=2246 114s
+cell31 pore= 2.5a  free nodes within 10a of defect: 1 [(np.float64(0.0), np.float64(24.4))]  E=364.675 nit=1836 95s

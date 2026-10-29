@@ -1,0 +1,84 @@
+none_d0.0_V0.005_lam-0.5                   d=   0 E=  92.539 N+=23 N-= 0 Qbox=23 gauss=0 | 
+none_d0.0_V0.005_a0_x_lam-0.5              d=   0 E= 131.421 N+=23 N-= 0 Qbox=23 gauss=0 | 
+none_d0.0_V0.005                           d=   0 E=  93.231 N+=23 N-= 0 Qbox=23 gauss=0 | 
+R_d8.0_V0.005_lam-0.5                      d=   8 E= 108.138 N+=22 N-= 4 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6
+pair_d8.0_V0.005_lam-0.5                   d=   8 E= 122.593 N+=22 N-= 1 Qbox=23 gauss=0 | Q=1 N-loc=1 z7=20  Q=1 N-loc=0 z7=20
+swin_d8.0                                  d=   8 E= 123.053 N+=20 N-= 1 Qbox=23 gauss=0 | Q=2 N-loc=0 z7=26  Q=2 N-loc=1 z7=26
+R_d8.0_V0.005_a0_x_lam-0.5                 d=   8 E= 145.611 N+=23 N-= 2 Qbox=23 gauss=0 | Q=2 N-loc=2 z7=4
+pair_d8.0_V0.005_a0_x_lam-0.5              d=   8 E= 157.695 N+=24 N-= 3 Qbox=23 gauss=0 | Q=1 N-loc=1 z7=22  Q=1 N-loc=2 z7=22
+mmin_d8.0                                  d=   8 E= 157.751 N+=23 N-= 3 Qbox=22 gauss=0 | Q=1 N-loc=2 z7=22  Q=1 N-loc=1 z7=22
+R_d16.0_V0.005_lam-0.5                     d=  16 E= 108.282 N+=22 N-= 4 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6
+pair_d16.0_V0.005_lam-0.5                  d=  16 E= 126.430 N+=22 N-= 9 Qbox=23 gauss=0 | Q=5 N-loc=5 z7=6  Q=5 N-loc=4 z7=6
+swout_d16.0                                d=  16 E= 126.428 N+=22 N-= 9 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6  Q=5 N-loc=5 z7=6
+swin_d16.0                                 d=  16 E= 125.744 N+=20 N-= 7 Qbox=23 gauss=0 | Q=6 N-loc=4 z7=10  Q=4 N-loc=3 z7=8
+twL1out_d16.0                              d=  16 E= 129.363 N+=22 N-= 9 Qbox=23 gauss=0 | Q=5 N-loc=5 z7=6  Q=5 N-loc=4 z7=6
+twL1in_d16.0                               d=  16 E= 129.362 N+=20 N-= 7 Qbox=23 gauss=0 | Q=5 N-loc=3 z7=10  Q=5 N-loc=4 z7=10
+R_d16.0_V0.005_a0_x_lam-0.5                d=  16 E= 145.766 N+=23 N-= 2 Qbox=23 gauss=0 | Q=2 N-loc=2 z7=4
+pair_d16.0_V0.005_a0_x_lam-0.5             d=  16 E= 162.501 N+=24 N-= 5 Qbox=23 gauss=0 | Q=2 N-loc=3 z7=4  Q=2 N-loc=2 z7=4
+mmout_d16.0                                d=  16 E= 161.861 N+=24 N-= 7 Qbox=23 gauss=0 | Q=3 N-loc=3 z7=6  Q=3 N-loc=4 z7=6
+mmin_d16.0                                 d=  16 E= 162.551 N+=23 N-= 5 Qbox=22 gauss=0 | Q=2 N-loc=3 z7=4  Q=2 N-loc=2 z7=4
+R_d21.0_V0.005_lam-0.5                     d=  21 E= 108.447 N+=22 N-= 4 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6
+pair_d21.0_V0.005_lam-0.5                  d=  21 E= 126.583 N+=22 N-= 7 Qbox=23 gauss=0 | Q=4 N-loc=3 z7=8  Q=4 N-loc=4 z7=10
+pair_d21.0_V0.005_lam-0.5_from_d26.0       d=  21 E= 125.833 N+=20 N-= 7 Qbox=23 gauss=0 | Q=5 N-loc=3 z7=10  Q=5 N-loc=4 z7=10
+swout_d21.0                                d=  21 E= 126.382 N+=22 N-= 8 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6  Q=4 N-loc=4 z7=6
+swin_d21.0                                 d=  21 E= 124.171 N+=20 N-= 6 Qbox=23 gauss=0 | Q=5 N-loc=3 z7=10  Q=4 N-loc=3 z7=6
+twL1out_d21.0                              d=  21 E= 130.007 N+=22 N-= 9 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6  Q=5 N-loc=5 z7=6
+twL1in_d21.0                               d=  21 E= 127.722 N+=20 N-= 7 Qbox=23 gauss=0 | Q=5 N-loc=3 z7=10  Q=5 N-loc=4 z7=6
+mmout_d21.0                                d=  21 E= 162.794 N+=24 N-= 9 Qbox=23 gauss=0 | Q=4 N-loc=4 z7=6  Q=4 N-loc=5 z7=6
+mmin_d21.0                                 d=  21 E= 162.088 N+=22 N-= 6 Qbox=22 gauss=0 | Q=3 N-loc=3 z7=4  Q=3 N-loc=3 z7=4
+R_d26.0_V0.005_lam-0.5                     d=  26 E= 108.801 N+=22 N-= 4 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=8
+pair_d26.0_V0.005_lam-0.5                  d=  26 E= 124.432 N+=20 N-= 3 Qbox=23 gauss=0 | Q=3 N-loc=2 z7=10  Q=3 N-loc=1 z7=10
+pair_d26.0_V0.005_lam-0.5_from_d30.0       d=  26 E= 124.925 N+=21 N-= 6 Qbox=23 gauss=0 | Q=3 N-loc=3 z7=8  Q=5 N-loc=3 z7=10
+swout_d26.0                                d=  26 E= 126.578 N+=22 N-= 7 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6  Q=3 N-loc=3 z7=8
+swin_d26.0                                 d=  26 E= 127.008 N+=21 N-= 8 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6  Q=5 N-loc=4 z7=6
+twL1out_d26.0                              d=  26 E= 130.073 N+=22 N-= 9 Qbox=23 gauss=0 | Q=5 N-loc=5 z7=6  Q=5 N-loc=4 z7=6
+R_d26.0_V0.005_a0_x_lam-0.5                d=  26 E= 145.770 N+=23 N-= 2 Qbox=23 gauss=0 | Q=2 N-loc=2 z7=4
+pair_d26.0_V0.005_a0_x_lam-0.5             d=  26 E= 161.019 N+=23 N-= 4 Qbox=23 gauss=0 | Q=2 N-loc=2 z7=4  Q=2 N-loc=2 z7=4
+mmout_d26.0                                d=  26 E= 163.033 N+=24 N-= 5 Qbox=23 gauss=0 | Q=2 N-loc=3 z7=6  Q=2 N-loc=2 z7=6
+mmin_d26.0                                 d=  26 E= 161.063 N+=22 N-= 4 Qbox=22 gauss=0 | Q=2 N-loc=2 z7=4  Q=2 N-loc=2 z7=4
+R_d30.0_V0.005_lam-0.5                     d=  30 E= 108.831 N+=22 N-= 3 Qbox=23 gauss=0 | Q=4 N-loc=3 z7=8
+pair_d30.0_V0.005_lam-0.5                  d=  30 E= 126.593 N+=22 N-= 6 Qbox=23 gauss=0 | Q=3 N-loc=3 z7=8  Q=4 N-loc=3 z7=8
+pair_d30.0_V0.005_lam-0.5_from_d26.0       d=  30 E= 125.998 N+=20 N-= 8 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=10  Q=6 N-loc=4 z7=10
+swout_d30.0                                d=  30 E= 127.275 N+=22 N-= 8 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6  Q=4 N-loc=4 z7=6
+swin_d30.0                                 d=  30 E= 124.808 N+=21 N-= 6 Qbox=23 gauss=0 | Q=4 N-loc=3 z7=6  Q=4 N-loc=3 z7=6
+twL1out_d30.0                              d=  30 E= 131.058 N+=22 N-=11 Qbox=23 gauss=0 | Q=6 N-loc=5 z7=6  Q=6 N-loc=5 z7=6
+twL1in_d30.0                               d=  30 E= 128.334 N+=21 N-= 8 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6  Q=5 N-loc=4 z7=6
+mmout_d30.0                                d=  30 E= 160.530 N+=23 N-= 4 Qbox=23 gauss=0 | Q=2 N-loc=2 z7=6  Q=2 N-loc=2 z7=6
+mmin_d30.0                                 d=  30 E= 160.967 N+=22 N-= 4 Qbox=22 gauss=0 | Q=2 N-loc=2 z7=4  Q=2 N-loc=2 z7=4
+R_d34.0_V0.005_lam-0.5                     d=  34 E= 108.826 N+=22 N-= 4 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=8
+pair_d34.0_V0.005_lam-0.5                  d=  34 E= 126.702 N+=21 N-= 8 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=8  Q=5 N-loc=4 z7=8
+pair_d34.0_V0.005_lam-0.5_from_d26.0       d=  34 E= 125.057 N+=20 N-= 6 Qbox=23 gauss=0 | Q=4 N-loc=3 z7=10  Q=5 N-loc=3 z7=10
+swout_d34.0                                d=  34 E= 127.834 N+=22 N-= 7 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6  Q=3 N-loc=3 z7=8
+swin_d34.0                                 d=  34 E= 126.573 N+=21 N-= 8 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6  Q=5 N-loc=4 z7=6
+twL1out_d34.0                              d=  34 E= 131.343 N+=22 N-= 9 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6  Q=5 N-loc=4 z7=6
+twL1in_d34.0                               d=  34 E= 130.133 N+=21 N-= 8 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6  Q=5 N-loc=4 z7=6
+mmout_d34.0                                d=  34 E= 161.184 N+=23 N-= 5 Qbox=23 gauss=0 | Q=2 N-loc=2 z7=6  Q=3 N-loc=3 z7=4
+mmin_d34.0                                 d=  34 E= 161.135 N+=22 N-= 4 Qbox=22 gauss=0 | Q=2 N-loc=2 z7=4  Q=2 N-loc=2 z7=4
+R_d40.0_V0.005_lam-0.5                     d=  40 E= 108.800 N+=22 N-= 1 Qbox=23 gauss=0 | Q=2 N-loc=1 z7=8
+pair_d40.0_V0.005_lam-0.5                  d=  40 E= 125.353 N+=21 N-= 2 Qbox=23 gauss=0 | Q=2 N-loc=1 z7=8  Q=2 N-loc=1 z7=8
+swout_d40.0                                d=  40 E= 129.659 N+=22 N-= 8 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6  Q=4 N-loc=4 z7=4
+swin_d40.0                                 d=  40 E= 125.406 N+=21 N-= 8 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6  Q=5 N-loc=4 z7=6
+twL1out_d40.0                              d=  40 E= 133.572 N+=22 N-=11 Qbox=23 gauss=0 | Q=6 N-loc=6 z7=6  Q=6 N-loc=5 z7=6
+twL1in_d40.0                               d=  40 E= 128.664 N+=21 N-= 8 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6  Q=5 N-loc=4 z7=6
+R_d40.0_V0.005_a0_x_lam-0.5                d=  40 E= 146.359 N+=23 N-= 1 Qbox=23 gauss=0 | Q=1 N-loc=1 z7=6
+pair_d40.0_V0.005_a0_x_lam-0.5             d=  40 E= 161.528 N+=22 N-= 2 Qbox=22 gauss=0 | Q=1 N-loc=1 z7=6  Q=1 N-loc=1 z7=6
+mmout_d40.0                                d=  40 E= 161.785 N+=23 N-= 4 Qbox=23 gauss=0 | Q=3 N-loc=3 z7=2  Q=1 N-loc=1 z7=6
+mmin_d40.0                                 d=  40 E= 161.558 N+=22 N-= 2 Qbox=22 gauss=0 | Q=1 N-loc=1 z7=6  Q=1 N-loc=1 z7=6
+R_d48.0_V0.005_lam-0.5                     d=  48 E= 108.136 N+=21 N-= 4 Qbox=23 gauss=0 | Q=6 N-loc=4 z7=10
+pair_d48.0_V0.005_lam-0.5                  d=  48 E= 124.125 N+=21 N-= 6 Qbox=23 gauss=0 | Q=4 N-loc=3 z7=6  Q=4 N-loc=3 z7=6
+swout_d48.0                                d=  48 E= 128.423 N+=22 N-= 7 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6  Q=3 N-loc=3 z7=8
+swin_d48.0                                 d=  48 E= 124.124 N+=21 N-= 6 Qbox=23 gauss=0 | Q=4 N-loc=3 z7=6  Q=4 N-loc=3 z7=6
+twL1out_d48.0                              d=  48 E= 134.415 N+=22 N-=11 Qbox=23 gauss=0 | Q=6 N-loc=6 z7=6  Q=6 N-loc=5 z7=6
+twL1in_d48.0                               d=  48 E= 127.391 N+=21 N-= 8 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6  Q=5 N-loc=4 z7=6
+mmout_d48.0                                d=  48 E= 160.434 N+=23 N-= 4 Qbox=23 gauss=0 | Q=2 N-loc=2 z7=6  Q=2 N-loc=2 z7=6
+mmin_d48.0                                 d=  48 E= 160.327 N+=22 N-= 4 Qbox=22 gauss=0 | Q=2 N-loc=2 z7=6  Q=2 N-loc=2 z7=6
+R_d56.0_V0.005_lam-0.5                     d=  56 E= 108.095 N+=21 N-= 3 Qbox=23 gauss=0 | Q=5 N-loc=3 z7=10
+pair_d56.0_V0.005_lam-0.5                  d=  56 E= 123.912 N+=21 N-= 8 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6  Q=5 N-loc=4 z7=6
+swout_d56.0                                d=  56 E= 125.047 N+=21 N-= 7 Qbox=23 gauss=0 | Q=4 N-loc=3 z7=8  Q=5 N-loc=4 z7=6
+twL1Bout_d56.0                             d=  56 E= 129.231 N+=20 N-= 7 Qbox=23 gauss=0 | Q=6 N-loc=4 z7=10  Q=4 N-loc=3 z7=10
+R_d56.0_V0.005_a0_x_lam-0.5                d=  56 E= 145.704 N+=23 N-= 2 Qbox=23 gauss=0 | Q=2 N-loc=2 z7=4
+pair_d56.0_V0.005_a0_x_lam-0.5             d=  56 E= 160.179 N+=22 N-= 4 Qbox=22 gauss=0 | Q=2 N-loc=2 z7=4  Q=2 N-loc=2 z7=4
+mmout_d56.0                                d=  56 E= 160.350 N+=23 N-= 5 Qbox=23 gauss=0 | Q=3 N-loc=3 z7=6  Q=2 N-loc=2 z7=6
+swBout_d42.0                               d=  42 E= 128.790 N+=22 N-= 5 Qbox=23 gauss=0 | Q=4 N-loc=3 z7=6  Q=2 N-loc=2 z7=8
+swBout_d44.0                               d=  44 E= 127.713 N+=22 N-= 6 Qbox=23 gauss=0 | Q=4 N-loc=3 z7=6  Q=3 N-loc=3 z7=8
+swBout_d46.0                               d=  46 E= 127.572 N+=22 N-= 7 Qbox=23 gauss=0 | Q=5 N-loc=4 z7=6  Q=3 N-loc=3 z7=8
