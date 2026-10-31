@@ -1,0 +1,15 @@
+# P1 mismatch inclusion runs (alpha=0, box ±150, r0=60), 4 parallel jobs on 4 cores, 1 BLAS thread each
+# tag                                   iterations  wall_min  E_final
+inc_a0_e+0.050_V0.0_L150_r60           1200        7         101.27955257006022
+inc_a0_e+0.000_V0.005_L150_r60         23200       167       552.2102551025769
+inc_a0_e+0.005_V0.005_L150_r60         8800        65        552.3440527598148
+inc_a0_e-0.005_V0.005_L150_r60         18400       131       552.0177738355967
+inc_a0_e+0.010_V0.005_L150_r60         8000        58        552.4325265990094
+inc_a0_e-0.010_V0.005_L150_r60         6000        43        551.5953493096747
+inc_a0_e+0.020_V0.005_L150_r60         8000        58        552.595088447978
+inc_a0_e-0.020_V0.005_L150_r60         6000        43        550.6477627785174
+inc_a0_e+0.050_V0.005_L150_r60         6800        47        553.2385130901512
+inc_a0_e-0.050_V0.005_L150_r60         5600        38        547.5921470503231
+# total ~10.3 CPU-hours (~3 h wall). All runs stopped by |dE/chunk|<1e-6 (chunk = 400 L-BFGS iterations).
+# Convergence check: e=+0.010 continued +2800 it, e=-0.010 continued +1600 it past the stop:
+#   S_inside/S_outside changed by <0.005 (+0.010: -6.499/-5.601 -> -6.494/-5.598; -0.010: -14.622/-7.707 -> -14.623/-7.706).

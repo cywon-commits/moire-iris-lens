@@ -35,6 +35,6 @@ import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
 fig,ax=plt.subplots(1,2,figsize=(12,4.5))
 for e in epss: ax[0].plot(R,out['runs'][str(e)]['S_shell'],'o-',label=f'ε*={e:+.3f}')
 ax[0].axvline(r0,ls=':',c='gray'); ax[0].set_xlabel('r'); ax[0].set_ylabel('S_shell'); ax[0].legend(); ax[0].set_title(f'α={a}: S per node shell')
-es=np.array(epss); ax[1].plot(es,[out['runs'][str(e)]['S_inside'] for e in epss],'o-',label='inside'); ax[1].plot(es,[out['runs'][str(e)]['S_outside'] for e in epss],'s-',label='outside')
+es=sorted(epss); ax[1].plot(es,[out['runs'][str(e)]['S_inside'] for e in es],'o-',label='inside'); ax[1].plot(es,[out['runs'][str(e)]['S_outside'] for e in es],'s-',label='outside')
 ax[1].set_xlabel('ε*'); ax[1].set_ylabel('S'); ax[1].legend(); ax[1].set_title('amplitude dependence (linear regime = plateau)')
 plt.tight_layout(); plt.savefig(f'incl_{a}_L{Lp}_r{r0}.png',dpi=100)
