@@ -12,6 +12,7 @@ complex defect charge C, lens map β = z − (C/κ)/z̄, and the far/local parti
 ## 계산 의뢰서
 
 - `tasks/TASK_mismatch_inclusion.md`: mismatch 모아레 고유팽창 원판 검증 (f_α 직접 측정). 작업 목록은 `tasks/jobs_P*.txt`, 실행은 `pair/incl_scan.py`로 하며 중간에 끊겨도 이어서 돌 수 있습니다.
+- 체크포인트 백업: `tasks/ckpt_loop.sh`가 계산 중 20분마다 `pair/inc_*.npz`를 `claude/github-upload-d5q58c-ckpt` 브랜치(커밋 1개, 매번 덮어씀)에 올립니다. 새 컨테이너에서는 `tasks/ckpt_restore.sh` 후 같은 `incl_scan.py` 명령으로 이어서 돌립니다.
 
 ## 구조
 
