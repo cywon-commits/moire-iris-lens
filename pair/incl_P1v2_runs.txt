@@ -1,0 +1,16 @@
+# v2 P1 mismatch inclusion runs (alpha=0, box ±150). Stop: |dE/chunk|<1e-6, chunk=400 L-BFGS iterations.
+# Wall times not listed: three session-worker restarts killed the runs (resumed from checkpoints), so elapsed times are not meaningful.
+# tag                                   iterations  E_final
+inc_a0_e+0.050_V0.0_L150_r70           1200        101.74262435171302
+inc_a0_e+0.000_V0.005_L150_r70         (hard link to ..._r60 baseline: eps=0 is r0-independent; 23200 it)
+inc_a0_e+0.005_V0.005_L150_r70         13200       552.2545017376058
+inc_a0_e-0.005_V0.005_L150_r70         11600       552.1769158822648
+inc_a0_e+0.010_V0.005_L150_r70         12400       552.3120202634602
+inc_a0_e-0.010_V0.005_L150_r70         18000       552.0691505651918
+inc_a0_e+0.020_V0.005_L150_r70         8400        552.4745063784231
+inc_a0_e-0.020_V0.005_L150_r70         8000        551.2598915193485
+inc_a0_e+0.010_V0.005_L150_r45         18800       552.2290646844144
+inc_a0_e-0.010_V0.005_L150_r45         8400        552.2111112377754
+inc_a0_e+0.010_V0.005_L150_r60         8000        552.4325265990094   (v1 run, reused)
+inc_a0_e-0.010_V0.005_L150_r60         6000        551.5953493096747   (v1 run, reused)
+# CPU time ~ 0.45 min per 100 iterations per job at box ±150 (1 core): v2 P1 new jobs ~ 100k it ~ 8 CPU-hours.
