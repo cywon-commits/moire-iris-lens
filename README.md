@@ -9,6 +9,10 @@ complex defect charge C, lens map β = z − (C/κ)/z̄, and the far/local parti
 - 논문 초안: https://claude.ai/artifact/48U2nj2hkbChCXcrEV6NzP (문서에서 Markdown/Word/PDF로 내보내기 가능)
 - 주요 결과 그림: `pair/topo_charges.png`, `pair/area_add_torque.png`, `pair/conservation_test.png`, `pair/opp_pair.png`, `pair/twist_branches.png`
 
+## 계산 의뢰서
+
+- `tasks/TASK_mismatch_inclusion.md`: mismatch 모아레 고유팽창 원판 검증 (f_α 직접 측정). 작업 목록은 `tasks/jobs_P*.txt`, 실행은 `pair/incl_scan.py`로 하며 중간에 끊겨도 이어서 돌 수 있습니다.
+
 ## 구조
 
 | 폴더 | 내용 | 핵심 스크립트 |
