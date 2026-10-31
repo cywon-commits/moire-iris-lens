@@ -5,9 +5,10 @@ Output: incl_<alpha>_L<LP>_r<R0>.json and .png
 import sys,os,json,glob,numpy as np
 from nodedisp import node_positions
 a=int(sys.argv[1]); Lp=int(sys.argv[2]); r0=int(sys.argv[3]); epss=[float(e) for e in sys.argv[4:]]
-def tag(al,e,V): 
-    for fmt in ('+.3f','+.2f'):
-        t=f'inc_a{al}_e{e:{fmt}}_V{V}_L{Lp}_r{r0}'
+def tag(al,e,V):
+    rr=[r0] if e!=0 else [r0]+[int(f.split('_r')[1].split('.')[0].split('_')[0]) for f in glob.glob(f'inc_a{al}_e+0.0*_V{V}_L{Lp}_r*.npz')]  # eps=0 baseline is r0-independent
+    for fmt,R0 in [(f,x) for x in rr for f in ('+.3f','+.2f')]:
+        t=f'inc_a{al}_e{e:{fmt}}_V{V}_L{Lp}_r{R0}'
         if os.path.exists(t+'.npz'): return t
         if os.path.exists(t+'_ck.npz'): print('WARNING unfinished',t); return t+'_ck'
     raise FileNotFoundError(f'inc_a{al}_e{e}_V{V}_L{Lp}_r{r0}')
@@ -20,16 +21,18 @@ def Ur(t,al):
     return r,((zz-zi)*np.conj(zi)/np.maximum(r,1e-9)).real,((zz-zi)*np.conj(zi)/np.maximum(r,1e-9)).imag
 def shells(r,v):
     R=np.array(sorted(set(np.round(r[r>1])))); return R,np.array([v[np.abs(r-x)<1].mean() for x in R]),np.array([v[np.abs(r-x)<1].std() for x in R])
-bare=[f for f in glob.glob(f'inc_a0_e+*_V0.0_L{Lp}_r{r0}.npz')][0][:-4]; eb=float(bare.split('_e')[1].split('_')[0])
-rb,ub,_=Ur(bare,0); Rb,Ub,_=shells(rb,ub)
+bl=glob.glob(f'inc_a0_e+*_V0.0_L{Lp}_r{r0}.npz')
+if bl: bare=bl[0][:-4]; eb=float(bare.split('_e')[1].split('_')[0]); rb,ub,_=Ur(bare,0); Rb,Ub,_=shells(rb,ub)
 r,u0,t0=Ur(tag(a,0.0,0.005),a); R,U0,_=shells(r,u0)
+if not bl: Ub=(1/3)*0.05*r0**2*np.where(R<r0,R/r0**2,1/R)-(1/3)*0.05*r0**2*R/158.**2; eb=0.05   # analytic clamped bare (L_eff~158)
 out=dict(alpha=a,Lp=Lp,r0=r0,r=R.tolist(),baseline_Ur_over_r=(U0/R).tolist(),bare_Ur_over_eps=(Ub/eb).tolist(),runs={})
 for e in epss:
     t=tag(a,e,0.005); _,ue,te=Ur(t,a); _,dU,dUs=shells(r,ue-u0); _,dT,_=shells(r,te-t0)
+    o=(R>r0+8); (Af,Bf),*_=np.linalg.lstsq(np.c_[np.ones(o.sum()),R[o]**2],R[o]*dU[o]/e,rcond=None)   # normalization-free: r dU_r/eps = A + B r^2
     S=(1/3)*(dU/e)/(Ub/eb); E=float(np.load(t+'.npz')['E']) if 'E' in np.load(t+'.npz') else None
     out['runs'][str(e)]=dict(dUr_over_eps=(dU/e).tolist(),spread=(dUs/abs(e)).tolist(),dUt_over_eps=(dT/e).tolist(),S_shell=S.tolist(),
-                             S_inside=float(np.mean(S[R<r0-5])),S_outside=float(np.mean(S[R>r0+10])),E=E)
-    print(f'eps={e:+.3f}  S_inside={np.mean(S[R<r0-5]):+.3f}  S_outside={np.mean(S[R>r0+10]):+.3f}  E={E}')
+                             S_inside=float(np.mean(S[R<r0-5])),S_outside=float(np.mean(S[R>r0+10])),S_fit=float(Af/r0**2),L_eff=float(np.sqrt(-Af/Bf)) if Af*Bf<0 else None,E=E)
+    print(f'eps={e:+.3f}  S_fit=A/r0^2={Af/r0**2:+.3f}  L_eff={np.sqrt(-Af/Bf) if Af*Bf<0 else float("nan"):.0f}  S_inside={np.mean(S[R<r0-5]):+.3f}  S_outside={np.mean(S[R>r0+10]):+.3f}  E={E}')
 json.dump(out,open(f'incl_{a}_L{Lp}_r{r0}.json','w'),indent=1)
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
 fig,ax=plt.subplots(1,2,figsize=(12,4.5))
