@@ -1,0 +1,9 @@
+# v2 P2 inclusion runs (box ±200, r0=95). Stop: |dE/chunk|<1e-6, chunk=400. Wall times omitted (session-worker restarts).
+# tag                                   iterations  E_final
+inc_a0_e+0.000_V0.005_L200_r95         (hard link to ..._L200_r60 baseline, 32000 it)  970.5832420940046
+inc_a0_e+0.010_V0.005_L200_r95         18800       970.8414070521826
+inc_a0_e-0.010_V0.005_L200_r95         9600        969.9442981340928
+inc_a90_e+0.000_V0.005_L200_r95        5200        669.2560911225944
+inc_a90_e+0.010_V0.005_L200_r95        4800        669.057084060533
+inc_a90_e-0.010_V0.005_L200_r95        4400        669.4971227687056
+# no bare (V0=0) run at box ±200: S_inside/S_outside use the analytic fallback (L_eff=158) and are not reliable here; use S_fit.
