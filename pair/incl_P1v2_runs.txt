@@ -13,4 +13,4 @@ inc_a0_e+0.010_V0.005_L150_r45         18800       552.2290646844144
 inc_a0_e-0.010_V0.005_L150_r45         8400        552.2111112377754
 inc_a0_e+0.010_V0.005_L150_r60         8000        552.4325265990094   (v1 run, reused)
 inc_a0_e-0.010_V0.005_L150_r60         6000        551.5953493096747   (v1 run, reused)
-# CPU time ~ 0.45 min per 100 iterations per job at box ±150 (1 core): v2 P1 new jobs ~ 100k it ~ 8 CPU-hours.
+# CPU time ~ 0.7 min per 100 iterations per job at box ±150 (1 core, from v1 P1 timings): v2 P1 new jobs ~ 100k it ~ 12 CPU-hours.
