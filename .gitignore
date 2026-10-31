@@ -6,3 +6,4 @@ __pycache__/
 data/
 *.tar
 *.tar.gz
+pair/log_inc_*.txt
