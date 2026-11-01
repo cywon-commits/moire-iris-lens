@@ -1,12 +1,12 @@
 #!/bin/bash
-# Snapshot pair/inc_*.npz (checkpoints + finished runs) and run logs to a single-commit branch on origin (force-push).
+# Snapshot pair/inc_*.npz, partition-scan checkpoints (ps_*_ck, pbg_*) and run logs to a single-commit branch on origin (force-push).
 # usage: tasks/ckpt_sync.sh            (run from anywhere inside the repo)
 set -e
 cd "$(git rev-parse --show-toplevel)"
 BR=${CKPT_BRANCH:-claude/github-upload-d5q58c-ckpt}
 T=$(mktemp -d); I=$(mktemp -d); trap 'rm -rf "$T" "$I"' EXIT
 mkdir -p "$T/pair"
-for f in pair/inc_*.npz pair/log_inc_*.txt pair/scan_*.log; do [ -e "$f" ] && cp "$f" "$T/pair/"; done
+for f in pair/inc_*.npz pair/log_inc_*.txt pair/scan_*.log pair/pbg_*.npz pair/ps_*_ck.npz pair/pscan_results*.json; do [ -e "$f" ] && cp "$f" "$T/pair/"; done
 # drop snapshots caught mid-write (np.savez is not atomic)
 python3 -I - "$T/pair" <<'PY'
 import sys,glob,os,numpy as np

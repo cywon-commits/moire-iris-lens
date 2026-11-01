@@ -7,3 +7,5 @@ data/
 *.tar
 *.tar.gz
 pair/log_inc_*.txt
+pair/log_ps_*.txt
+pair/log_pbg_*.txt
