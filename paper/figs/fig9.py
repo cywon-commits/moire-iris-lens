@@ -67,12 +67,13 @@ ax.set_title('(d) size regimes',loc='left',fontsize=8,pad=3)
 # (e),(f) relaxed
 def Vmap(f):
     D=np.load(f); V,_,_=Vhex(D['ux'],D['uy'],0.005,s3*0.005); V=V.copy(); V[D['core']]=np.nan; return V,D['x']
-for k,(f,t) in enumerate((('biglens_a90_C120+0j_r20_L150','(e) relaxed, twist'),('biglens_a0_C120+0j_r20_L150','(f) relaxed, mismatch'))):
+for k,(f,t) in enumerate((('biglens_a90_C120+0j_r20_L150','(e) relaxed: spiral walls'),('biglens_a0_C120+0j_r20_L150','(f) relaxed: target walls'))):
     ax=fig.add_subplot(gb[1+k]); P='/home/claude/ridge/pair/'+f
     fn=P+'.npz' if os.path.exists(P+'.npz') else (P+'_ck.npz' if os.path.exists(P+'_ck.npz') else None)
     if fn:
-        V,x=Vmap(fn); m=np.abs(x)<LIM+1
-        ax.imshow(V[np.ix_(m,m)].T,origin='lower',cmap='magma',extent=[x[m][0],x[m][-1]]*2,interpolation='bilinear',vmin=0,vmax=0.06)
-        tt=np.linspace(0,2*np.pi,300); ax.plot(R*np.cos(tt),R*np.sin(tt),'w--',lw=0.7)
-    ax.set_xlim(-LIM,LIM); ax.set_ylim(-LIM,LIM); ax.set_xticks([]); ax.set_yticks([]); ax.set_title(t,loc='left',fontsize=8,pad=3)
+        V,x=Vmap(fn); Z=95; m=np.abs(x)<Z+1
+        ax.imshow(np.log10(V[np.ix_(m,m)].T+1e-4),origin='lower',cmap='magma',extent=[x[m][0],x[m][-1]]*2,interpolation='bilinear',vmin=-4,vmax=np.log10(0.08))
+        tt=np.linspace(0,2*np.pi,300); ax.plot(R*np.cos(tt),R*np.sin(tt),'--',c='#7fdbff',lw=0.8)
+        if k==0: ax.plot(np.sqrt(2)*R*np.cos(tt),np.sqrt(2)*R*np.sin(tt),':',c='#7fdbff',lw=0.9)
+    ax.set_xlim(-95,95); ax.set_ylim(-95,95); ax.set_xticks([]); ax.set_yticks([]); ax.set_title(t,loc='left',fontsize=8,pad=3)
 fig.savefig('fig9.pdf'); fig.savefig('fig9_preview.png',dpi=170)
