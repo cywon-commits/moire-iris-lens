@@ -1,0 +1,97 @@
+{
+ "Qhole": 95,
+ "T": 29.020789827747485,
+ "z0": [
+  0.0,
+  0.0
+ ],
+ "rows": [
+  {
+   "rho": 40,
+   "Nplus": 0,
+   "Nminus": 82,
+   "Q": 13,
+   "Qbg": 7,
+   "dNplus": 7,
+   "dQ": 6,
+   "q": 13,
+   "pred_dNplus": null,
+   "pred_dQ": null
+  },
+  {
+   "rho": 55,
+   "Nplus": 0,
+   "Nminus": 88,
+   "Q": 7,
+   "Qbg": 13,
+   "dNplus": 13,
+   "dQ": -6,
+   "q": 7,
+   "pred_dNplus": null,
+   "pred_dQ": null
+  },
+  {
+   "rho": 70,
+   "Nplus": 8,
+   "Nminus": 88,
+   "Q": 13,
+   "Qbg": 19,
+   "dNplus": 11,
+   "dQ": -6,
+   "q": 7,
+   "pred_dNplus": 18.360091523676978,
+   "pred_dQ": 10.660698304070504
+  },
+  {
+   "rho": 85,
+   "Nplus": 12,
+   "Nminus": 88,
+   "Q": 19,
+   "Qbg": 31,
+   "dNplus": 19,
+   "dQ": -12,
+   "q": 7,
+   "pred_dNplus": 21.790696860280985,
+   "pred_dQ": 7.2300929674665
+  },
+  {
+   "rho": 100,
+   "Nplus": 30,
+   "Nminus": 88,
+   "Q": 37,
+   "Qbg": 37,
+   "dNplus": 7,
+   "dQ": 0,
+   "q": 7,
+   "pred_dNplus": 23.797047658752938,
+   "pred_dQ": 5.223742168994546
+  },
+  {
+   "rho": 115,
+   "Nplus": 48,
+   "Nminus": 88,
+   "Q": 55,
+   "Qbg": 55,
+   "dNplus": 7,
+   "dQ": 0,
+   "q": 7,
+   "pred_dNplus": 25.07089026707108,
+   "pred_dQ": 3.9498995606764047
+  },
+  {
+   "rho": 130,
+   "Nplus": 54,
+   "Nminus": 88,
+   "Q": 61,
+   "Qbg": 61,
+   "dNplus": 7,
+   "dQ": 0,
+   "q": 7,
+   "pred_dNplus": 25.929818130117575,
+   "pred_dQ": 3.090971697629908
+  }
+ ],
+ "node_free_radius": 59.70330496927778,
+ "E": 670.8557954194986,
+ "E_bg": 382.0221741347036
+}
