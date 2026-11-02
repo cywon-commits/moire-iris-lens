@@ -60,8 +60,8 @@ ax.legend(loc='upper left',ncol=2,fontsize=6.0,columnspacing=0.8)
 plabel(ax,'(d)','twist $(+,+)$ pair: integer branches and hysteresis')
 # (e,f) rotation maps
 def wmap(ax,f,t):
-    D=np.load(P+f+'.npz'); x=D['x']; h=x[1]-x[0]; w=0.5*(np.gradient(D['uy'],h,axis=0)-np.gradient(D['ux'],h,axis=1)); w[D['core']]=np.nan
-    m=np.abs(x)<54; ax.imshow(w[np.ix_(m,m)].T,origin='lower',extent=[x[m][0],x[m][-1]]*2,cmap='RdBu_r',vmin=-.3,vmax=.3)
+    D=np.load(P+f+'.npz'); x=D['x']; V=Vmap(D)
+    m=np.abs(x)<54; ax.imshow(logV(V[np.ix_(m,m)]).T,origin='lower',extent=[x[m][0],x[m][-1]]*2,interpolation='bilinear',**LOGV)
     ax.set_xticks([]); ax.set_yticks([]); ax.set_title(t,loc='left',pad=3,fontsize=8)
 wmap(fig.add_subplot(g2[2]),'swout_d40.0','(e) pulled, $d=40$')
 wmap(fig.add_subplot(g2[3]),'swin_d40.0','(f) pushed, $d=40$')
