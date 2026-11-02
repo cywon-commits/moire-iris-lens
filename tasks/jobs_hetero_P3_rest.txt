@@ -1,0 +1,4 @@
+# remaining P3 jobs (split off while two others ran as orphans of the first scan)
+24 0 0.3 60 GEN
+24 180 0.3 60 AA
+24 180 0.3 60 GEN
