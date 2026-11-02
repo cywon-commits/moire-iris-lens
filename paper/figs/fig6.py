@@ -25,7 +25,7 @@ plabel(ax,'(b)','sign rule, twist pairs')
 ax=fig.add_subplot(gs[2]); cwd=os.getcwd(); os.chdir(P)
 from burgers import circuits
 D=np.load('swout_d40.0.npz'); x=D['x']; m=np.abs(x)<58; V=Vmap(D)
-ax.imshow(V[np.ix_(m,m)].T,origin='lower',cmap='magma',extent=[x[m][0],x[m][-1]]*2,vmin=0,vmax=0.06,interpolation='bilinear')
+ax.imshow(logV(V[np.ix_(m,m)]).T,origin='lower',extent=[x[m][0],x[m][-1]]*2,interpolation='bilinear',**LOGV)
 res,pos,lab=circuits('swout_d40.0',[(-20.,0.),(20.,0.)],90)
 os.chdir(cwd)
 for c,Bv in res:

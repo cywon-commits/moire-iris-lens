@@ -15,3 +15,5 @@ def save(fig,name):
 def Vmap(D):
     from hexcore import Vhex
     V,_,_=Vhex(D['ux'],D['uy'],0.005,s3*0.005); V=V.copy(); V[D['core']]=np.nan; return V
+def logV(V,floor=1e-4): return np.log10(V+floor)
+LOGV=dict(cmap='magma',vmin=-4,vmax=np.log10(0.08))

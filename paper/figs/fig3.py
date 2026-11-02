@@ -12,7 +12,7 @@ for i,(fam,fs) in enumerate(rows):
     for j,f in enumerate(fs):
         ax=fig.add_subplot(gs[i,j]); D=np.load(P+f+'.npz'); x=D['x']; V=Vmap(D)
         mx=np.abs(x-8)<lim+1; my=np.abs(x)<lim+1
-        ax.imshow(V[np.ix_(mx,my)].T,origin='lower',cmap='magma',extent=[x[mx][0],x[mx][-1],x[my][0],x[my][-1]],interpolation='bilinear',vmin=0,vmax=0.06)
+        ax.imshow(logV(V[np.ix_(mx,my)]).T,origin='lower',extent=[x[mx][0],x[mx][-1],x[my][0],x[my][-1]],interpolation='bilinear',**LOGV)
         ax.add_patch(Circle((8,0),RL,fill=False,ec='w',ls=':',lw=0.7))
         ax.set_xlim(8-lim,8+lim); ax.set_ylim(-lim,lim); ax.set_xticks([]); ax.set_yticks([])
         r=by[f]; t=f.split('_')[2]

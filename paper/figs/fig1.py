@@ -35,7 +35,7 @@ plabel(ax,'(a)','registry torus, lifted')
 # (b) simulated twist moire with area-removing defect, (c) beta plane, (d) image plane
 D=np.load(P+'c_tw_def.npz'); x=D['x']; V=Vmap(D); zd=8+0j; kap=1j*TH; m=4/kap; lim=58
 ax=fig.add_subplot(gs[1]); mx=np.abs(x-8)<lim+1; my=np.abs(x)<lim+1
-ax.imshow(V[np.ix_(mx,my)].T,origin='lower',cmap='magma',extent=[x[mx][0],x[mx][-1],x[my][0],x[my][-1]],interpolation='bilinear')
+ax.imshow(logV(V[np.ix_(mx,my)]).T,origin='lower',**LOGV,extent=[x[mx][0],x[mx][-1],x[my][0],x[my][-1]],interpolation='bilinear')
 zp,zn,sw,bet=lens_images(m,zd,kap,lim)
 k=(np.abs((zp-zd).real)<lim-2)&(np.abs(zp.imag)<lim-2)
 ax.plot(zp[k].real,zp[k].imag,'o',ms=5.5,mfc='none',mec='#7fdbff',mew=0.9)
