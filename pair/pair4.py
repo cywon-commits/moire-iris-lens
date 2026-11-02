@@ -3,10 +3,11 @@ import os; sys.path.insert(0,os.path.join(os.path.dirname(os.path.abspath(__file
 from scipy.optimize import minimize
 from hexcore import Vhex
 s3=np.sqrt(3.); c1=np.array([0.5,1/(2*s3)])
-def run(defects,Lm=30.,V0=0.005,alpha=90.,h=0.45,Lp=72.,lam=1.,mu=1.,rh=2.4,Kr=200.,maxit=60000,x0=None,mirror=False,symm=None,seed=None,seed_amp=0.05,seed_len=8.,want_EG=False,Ua=0j,Ub=0j,incl=None):
-    """defects: list of (x,y,C). area deficit 2*pi*C enforced through mean inward rim displacement; rim shape free"""
+def run(defects,Lm=30.,V0=0.005,alpha=90.,h=0.45,Lp=72.,lam=1.,mu=1.,rh=2.4,Kr=200.,maxit=60000,x0=None,mirror=False,symm=None,seed=None,seed_amp=0.05,seed_len=8.,want_EG=False,Ua=0j,Ub=0j,incl=None,eta=0j):
+    """eta: uniform heterostrain, background u_b = c_AA + kappa z + eta conj(z) (fixed boundary and initial state follow it).
+    defects: list of (x,y,C). area deficit 2*pi*C enforced through mean inward rim displacement; rim shape free"""
     V3=s3*V0; th=1/Lm; N=int(round(2*Lp/h))+1; x=np.linspace(-Lp,Lp,N); X,Y=np.meshgrid(x,x,indexing='ij'); Z=X+1j*Y
-    kap=th*np.exp(1j*np.radians(alpha)); W=kap*Z-kap*(Ua*Z+Ub*np.conj(Z)); ub=c1[0]+W.real, c1[1]+W.imag
+    kap=th*np.exp(1j*np.radians(alpha)); W=kap*Z-kap*(Ua*Z+Ub*np.conj(Z))+eta*np.conj(Z); ub=c1[0]+W.real, c1[1]+W.imag
     sxI=0.;syI=0.;gI=None
     if incl is not None:   # moire eigen-distortion U*=eps*(z-z0) inside disk: energy evaluated on u+s, s=kap*eps*(z-z0)[disk]
         xi,yi,ri,epsI=incl; zz=Z-(xi+1j*yi); dsk=np.abs(zz)<ri; sI=kap*epsI*zz*dsk; sxI=sI.real; syI=sI.imag

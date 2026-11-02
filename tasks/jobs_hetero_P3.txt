@@ -1,0 +1,41 @@
+# P3 heterostrain lens (twist). Format: CABS PHIM R ARG PLACE  or  bg LP R ARG. eta=0 reuses P1 (ps_a90_C*_p*_{AA,GEN}_a/b, lower energy).
+bg 72 0.1 0
+bg 72 0.1 60
+bg 72 0.3 0
+bg 72 0.3 60
+bg 150 0.1 0
+bg 150 0.1 60
+bg 150 0.3 0
+bg 150 0.3 60
+4 0 0.1 0 AA
+4 0 0.1 0 GEN
+4 180 0.1 0 AA
+4 180 0.1 0 GEN
+4 0 0.1 60 AA
+4 0 0.1 60 GEN
+4 180 0.1 60 AA
+4 180 0.1 60 GEN
+4 0 0.3 0 AA
+4 0 0.3 0 GEN
+4 180 0.3 0 AA
+4 180 0.3 0 GEN
+4 0 0.3 60 AA
+4 0 0.3 60 GEN
+4 180 0.3 60 AA
+4 180 0.3 60 GEN
+24 0 0.1 0 AA
+24 0 0.1 0 GEN
+24 180 0.1 0 AA
+24 180 0.1 0 GEN
+24 0 0.1 60 AA
+24 0 0.1 60 GEN
+24 180 0.1 60 AA
+24 180 0.1 60 GEN
+24 0 0.3 0 AA
+24 0 0.3 0 GEN
+24 180 0.3 0 AA
+24 180 0.3 0 GEN
+24 0 0.3 60 AA
+24 0 0.3 60 GEN
+24 180 0.3 60 AA
+24 180 0.3 60 GEN

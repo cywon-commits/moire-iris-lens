@@ -6,7 +6,7 @@ cd "$(git rev-parse --show-toplevel)"
 BR=${CKPT_BRANCH:-claude/github-upload-d5q58c-ckpt}
 T=$(mktemp -d); I=$(mktemp -d); trap 'rm -rf "$T" "$I"' EXIT
 mkdir -p "$T/pair"
-for f in pair/inc_*.npz pair/log_inc_*.txt pair/scan_*.log pair/pbg_*.npz pair/ps_*_ck.npz pair/pscan_results*.json pair/biglens_*_ck.npz pair/biglens_bg_*.npz; do [ -e "$f" ] && cp "$f" "$T/pair/"; done
+for f in pair/inc_*.npz pair/log_inc_*.txt pair/scan_*.log pair/pbg_*.npz pair/ps_*_ck.npz pair/pscan_results*.json pair/biglens_*_ck.npz pair/biglens_bg_*.npz pair/het_*_ck.npz pair/hbg_*.npz pair/hetero_results*.json; do [ -e "$f" ] && cp "$f" "$T/pair/"; done
 # drop snapshots caught mid-write (np.savez is not atomic)
 python3 -I - "$T/pair" <<'PY'
 import sys,glob,os,numpy as np
