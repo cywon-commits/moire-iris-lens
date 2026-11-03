@@ -12,3 +12,5 @@ pair/log_pbg_*.txt
 pair/log_wallwidth.txt
 pair/log_big_*.txt
 pair/log_hetero_*.txt
+pair/log_eG.py_*.txt
+pair/eG_runs/
