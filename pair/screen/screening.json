@@ -1,0 +1,101 @@
+{
+ "note": "far share -dQ/(T cos phim) for |C|=8, phim=0, GEN, box 72, init=linear lens field. V0=0 elastic twist: 0.93-1.12, mismatch 0.83-0.93 (el.py).",
+ "runs": [
+  {
+   "background": "twist",
+   "lam": -0.5,
+   "V0": 0.0025,
+   "absC": 8,
+   "phim": 0,
+   "place": "GEN",
+   "Lp": 72,
+   "ratio_int": 0.7106974042546538,
+   "ratio_area": 0.6977066057577146,
+   "ratio_nodefit": 0.5671899441752407
+  },
+  {
+   "background": "twist",
+   "lam": -0.5,
+   "V0": 0.005,
+   "absC": 8,
+   "phim": 0,
+   "place": "GEN",
+   "Lp": 72,
+   "ratio_int": 0.5599434094127576,
+   "ratio_area": 0.5313800020884456,
+   "ratio_nodefit": 0.426127962915063
+  },
+  {
+   "background": "twist",
+   "lam": -0.5,
+   "V0": 0.01,
+   "absC": 8,
+   "phim": 0,
+   "place": "GEN",
+   "Lp": 72,
+   "ratio_int": 0.4091894145708613,
+   "ratio_area": 0.41881341245472226,
+   "ratio_nodefit": 0.3067859304585815
+  },
+  {
+   "background": "twist",
+   "lam": -0.5,
+   "V0": 0.02,
+   "absC": 8,
+   "phim": 0,
+   "place": "GEN",
+   "Lp": 72,
+   "ratio_int": 0.3661168446160338,
+   "ratio_area": 0.35200786208288903,
+   "ratio_nodefit": 0.21788435968251033
+  },
+  {
+   "background": "twist",
+   "lam": 1.0,
+   "V0": 0.005,
+   "absC": 8,
+   "phim": 0,
+   "place": "GEN",
+   "Lp": 72,
+   "ratio_int": 0.30150798968379255,
+   "ratio_area": 0.3612186877770034,
+   "ratio_nodefit": 0.3295504738694151
+  },
+  {
+   "background": "mismatch",
+   "lam": -0.5,
+   "V0": 0.005,
+   "absC": 8,
+   "phim": 0,
+   "place": "GEN",
+   "Lp": 72,
+   "ratio_int": 0.9260602540287913,
+   "ratio_area": 0.9323014201002924,
+   "ratio_nodefit": 0.7987724775255992
+  },
+  {
+   "background": "mismatch",
+   "lam": -0.9,
+   "V0": 0.005,
+   "absC": 8,
+   "phim": 0,
+   "place": "GEN",
+   "Lp": 72,
+   "ratio_int": 0.8399151141191363,
+   "ratio_area": 0.8040131796826676,
+   "ratio_nodefit": 0.5954979154024038
+  },
+  {
+   "background": "mismatch",
+   "lam": -0.5,
+   "V0": 0.02,
+   "absC": 8,
+   "phim": 0,
+   "place": "GEN",
+   "Lp": 72,
+   "ratio_int": 0.7106974042546538,
+   "ratio_area": 0.6943028757146693,
+   "ratio_nodefit": 0.40495811383837305
+  }
+ ]
+}
