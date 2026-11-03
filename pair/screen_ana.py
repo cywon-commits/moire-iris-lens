@@ -1,8 +1,9 @@
 """S1-S4 analysis (tasks/TASK_screening_scan.md sec. 3). usage: python screen_ana.py JOBFILE [OUT.json]
 Per defect run (job lines 'ALPHA CABS PHIM PLACE V0 LAM INIT LP'; 'bg' lines are skipped):
  1 rho_node : node-label tracking (nodedisp.node_positions on run and background), fit
-              dz = m_eff/conj(w) + b0 + b1 w + b2 conj(w),  w = background node - z0,  1.5R+5 < |w| < Lp-8
-              (as screen/mfit.py); also in three equal radial shells. rho_node = m_eff/m (complex), m = C/kappa.
+              dz = m_eff/conj(w') + b0 + b1 w' + b2 conj(w'),  w' = relaxed node - z0 (exact for the linear lens: the node
+              condition is evaluated at the displaced node; screen/mfit.py used the background node w = zb - z0, which biases
+              rho low by O(|m|/w^2)), selected by 1.5R+5 < |zb - z0| < Lp-8; also in three equal radial shells. rho_node = m_eff/m (complex), m = C/kappa.
  2 rho_int, rho_area : -dQ and -dQ_area (conserv.Qint/Qarea) averaged over [1.5R+10, Lp-15], divided by T cos(phi_m).
  3 inner over-rotation / over-dilation: azimuthal means of d_omega/theta and d_div/theta (run minus background, core
    excluded) in rings r in [r_h+1, 2R] (width 2); b_bar = area (= r-weighted) mean over r_h+1 < r < 0.6R of d_omega
@@ -22,14 +23,19 @@ s3=np.sqrt(3.); Ac=s3/2; th=1/30.; mu=1.
 def nodefit(D,B,alpha,z0,C,r1,r2,rmax):
     z,e=node_positions(D,alpha,rmax=rmax); zb,eb=node_positions(B,alpha,rmax=rmax)
     ok=(e<1e-6)&(eb<1e-6); d=z-zb; w=zb-z0; rr=np.abs(w); m=C/kap(alpha)
-    def fit(a,b):
+    wn=z-z0   # the node condition kappa z + du(z) = kappa zb gives d = -du(z)/kappa, i.e. the lens term is m_eff/conj(z - z0)
+    def fit(a,b,ext=False):
         s=ok&(rr>a)&(rr<b)&(np.abs(d)<10)
-        if s.sum()<6: return None
-        w_=w[s]; A=np.stack([1/np.conj(w_),np.ones_like(w_),w_,np.conj(w_)],1); sol=np.linalg.lstsq(A,d[s],rcond=None)[0]
+        if s.sum()<(10 if ext else 6): return None
+        w_=wn[s]; cols=[1/np.conj(w_),np.ones_like(w_),w_,np.conj(w_)]
+        if ext: cols+=[1/w_,np.log(np.abs(w_)),w_/np.conj(w_)]   # shear force dipole (1/z) and net force on the core (Kelvin: log r, z/zbar)
+        A=np.stack(cols,1); sol=np.linalg.lstsq(A,d[s],rcond=None)[0]
         rms=float(np.sqrt(np.mean(abs(d[s]-A@sol)**2))); r=sol[0]/m
-        return dict(n=int(s.sum()),rho=[r.real,r.imag],rho_abs=float(abs(r)),b0=[sol[1].real,sol[1].imag],b1=[sol[2].real,sol[2].imag],b2=[sol[3].real,sol[3].imag],rms=rms,r1=float(a),r2=float(b))
+        o=dict(n=int(s.sum()),rho=[r.real,r.imag],rho_abs=float(abs(r)),b0=[sol[1].real,sol[1].imag],b1=[sol[2].real,sol[2].imag],b2=[sol[3].real,sol[3].imag],rms=rms,r1=float(a),r2=float(b))
+        if ext: o.update(dipole_1_over_z=[sol[4].real,sol[4].imag],force_log=[sol[5].real,sol[5].imag],force_z_over_zbar=[sol[6].real,sol[6].imag])
+        return o
     edges=np.linspace(r1,r2,4)
-    return fit(r1,r2),[fit(edges[i],edges[i+1]) for i in range(3)]
+    return fit(r1,r2),[fit(edges[i],edges[i+1]) for i in range(3)],fit(r1,r2,True),[fit(edges[i],edges[i+1],True) for i in range(3)]
 def grads(E,h):
     ux,uy=E['ux'],E['uy']
     return np.gradient(ux,h,axis=0),np.gradient(ux,h,axis=1),np.gradient(uy,h,axis=0),np.gradient(uy,h,axis=1)
@@ -50,8 +56,8 @@ def one(job):
     D=np.load(t+'.npz'); B=np.load(bt+'.npz'); x=D['x']; h=x[1]-x[0]
     z0=place(pl,alpha); C=cabs*np.exp(1j*np.radians(alpha+phim)); R=np.sqrt(cabs/th); T=2*np.pi*th*cabs/Ac; Tc=T*np.cos(np.radians(phim)); rh=rh_of(cabs,'s')
     rec.update(status='converged',T=T,R=R,rh=rh,iters=int(D['tot']),dE=float(D['E'])-float(B['E']))
-    full,shells=nodefit(D,B,alpha,z0,C,1.5*R+5,Lp-8,Lp-8+15); rec['node']=full; rec['node_shells']=shells
-    rec['rho_node']=full['rho'][0] if full else None
+    full,shells,fx,fxs=nodefit(D,B,alpha,z0,C,1.5*R+5,Lp-8,Lp-8+15); rec['node']=full; rec['node_shells']=shells; rec['node_ext']=fx; rec['node_ext_shells']=fxs
+    rec['rho_node']=full['rho'][0] if full else None; rec['rho_node_ext']=fx['rho'][0] if fx else None
     rs=np.arange(np.ceil(1.5*R+10),Lp-15+1e-9,1.0)
     dQ=np.array([Qint(D['ux'],D['uy'],x,z0.real,z0.imag,r)-Qint(B['ux'],B['uy'],x,z0.real,z0.imag,r) for r in rs])
     dA=np.array([Qarea(D['ux'],D['uy'],x,z0.real,z0.imag,r)-Qarea(B['ux'],B['uy'],x,z0.real,z0.imag,r) for r in rs])
@@ -83,5 +89,5 @@ if __name__=='__main__':
         except Exception as e: r=dict(job=j,status='error',err=repr(e))
         res.append(r)
         if r.get('status')=='converged':
-            nd=r['node']; print(f"{r['tag']:44s} rho_node={nd['rho'][0] if nd else float('nan'):+.3f}{nd['rho'][1] if nd else 0:+.3f}i (n={nd['n'] if nd else 0}) rho_int={r.get('rho_int',float('nan')):.3f} rho_area={r.get('rho_area',float('nan')):.3f} b/θ={r['b_bar']:+.3f} θ/(θ+b)={r['theta_over_theta_plus_b']:.3f} dE={r['dE']:.2f}",flush=True)
+            nd=r['node']; print(f"{r['tag']:44s} rho_node={nd['rho'][0] if nd else float('nan'):+.3f}{nd['rho'][1] if nd else 0:+.3f}i ext={r['rho_node_ext'] if r['rho_node_ext'] is not None else float('nan'):+.3f} (n={nd['n'] if nd else 0}) rho_int={r.get('rho_int',float('nan')):.3f} rho_area={r.get('rho_area',float('nan')):.3f} b/θ={r['b_bar']:+.3f} θ/(θ+b)={r['theta_over_theta_plus_b']:.3f} dE={r['dE']:.2f}",flush=True)
     json.dump(res,open(out,'w'),indent=1)
