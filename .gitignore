@@ -14,3 +14,4 @@ pair/log_big_*.txt
 pair/log_hetero_*.txt
 pair/log_eG.py_*.txt
 pair/eG_runs/
+pair/log_screen_*.txt
