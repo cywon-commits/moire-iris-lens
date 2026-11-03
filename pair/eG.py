@@ -50,7 +50,7 @@ def solve(alpha,r,arg,V0=0.005,lam=-0.5,mu=1.,th=1/30.,n=1,h=0.45,gtol=1e-10,see
     res=minimize(EG,x0,jac=True,method='L-BFGS-B',options=dict(maxiter=maxit,maxfun=2*maxit,gtol=gtol,ftol=1e-16,maxcor=30))
     Eel,EV=EG(res.x,True)
     # homogeneous elastic energy density of G alone (rotation costs nothing)
-    exx=gb[0][0]; eyy=gb[1][1]; exy=0.5*(gb[0][1]+gb[1][0]); tr=exx+eyy; ehom=0.5*(mu*(exx**2+eyy**2+2*exy**2)+0.5*lam*tr**2)
+    exx=gb[0][0]; eyy=gb[1][1]; exy=0.5*(gb[0][1]+gb[1][0]); tr=exx+eyy; ehom=mu*(exx**2+eyy**2+2*exy**2)+0.5*lam*tr**2   # same density as EG: mu eps:eps + lam/2 (tr eps)^2
     s1,s2=abs(P)+abs(Q),abs(abs(P)-abs(Q))
     return dict(alpha=alpha,r=r,arg=arg,V0=V0,lam=lam,K_over_mu=(lam+mu)/mu,theta=th,P=[P.real,P.imag],Q=[Q.real,Q.imag],
                 detG=float(abs(P)**2-abs(Q)**2),sigma1=float(s1),sigma2=float(s2),
