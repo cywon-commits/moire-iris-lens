@@ -2,7 +2,7 @@ import numpy as np
 from scipy.spatial import cKDTree
 from lat import *
 s3=np.sqrt(3); Acell=s3/2; Aat=Acell/2
-def bonds(X,cut=0.66):
+def bonds(X,cut=0.72):
     T=cKDTree(X); return np.array(sorted(T.query_pairs(cut)))
 def radial(z,C):
     # area-preserving radial map with far field -C/conj(z): r'^2 = r^2 - 2C
@@ -24,13 +24,19 @@ def rotpatch(X,rh=5.0,phi=np.radians(11)):
     return np.c_[zn.real,zn.imag],-1j*c,tag                          # C = -i c  (delta u = -C/zbar = i c z/|z|^2, ccw)
 def neutral(X,sep=10.0):
     Y,C1,t1=vacancy(X,rh=4.0,close=0.7,c0=-sep)
-    Z,C2,t2=island(Y,rh=0.01,Cabs=C1,c0=sep+0j)
-    t=np.r_[t2[t2==2],t1[-(t2==0).sum():]] if False else None
-    # recompute tags
-    zz=Z[:,0]+1j*Z[:,1]; tag=np.zeros(len(Z),int); tag[np.abs(zz-sep)<np.sqrt(2*C1)-0.2]=2; tag[(np.abs(zz+sep)<4.0)]=1
+    Z,C2,t2=island_coherent(Y,Cabs=C1,e=0.2,c0=sep+0j)
+    tag=np.where(t2==2,2,t1)
     return Z,C1+C2,tag
 def edge(X,b=1.0,nu=0.2,core=0.7):
     x=X[:,0]; y=X[:,1]+1e-9; r2=x*x+y*y+core**2; t=np.arctan2(y,x)
     ux=b/(2*np.pi)*(t+x*y/(2*(1-nu)*r2)); uy=-b/(2*np.pi)*((1-2*nu)/(4*(1-nu))*np.log(r2)+(x*x-y*y)/(4*(1-nu)*r2))
     tag=((x*x+y*y)<4).astype(int)
     return np.c_[x+ux,X[:,1]+uy],0,tag
+
+def island_coherent(X,Cabs=4.0,e=0.13,c0=0j):
+    """coherent dilatational inclusion (Eshelby): uniform expansion e inside r<a, a^2=Cabs/e;
+    outside the area-preserving far field delta u = Cabs*z/|z|^2 (= -C/conj z with C=-Cabs). u continuous at r=a."""
+    a=np.sqrt(Cabs/e); z=X[:,0]+1j*X[:,1]-c0; r=np.abs(z)
+    zn=np.where(r<a,z*(1+e),z+Cabs*z/np.maximum(r,1e-12)**2)+c0
+    tag=(r<a).astype(int)*2
+    return np.c_[zn.real,zn.imag],-Cabs,tag

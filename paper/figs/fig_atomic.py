@@ -5,7 +5,7 @@ from scipy.ndimage import gaussian_filter
 from lat import *; from defects import *
 plt.rcParams.update({'font.size':7.5,'font.family':'serif','font.serif':['DejaVu Serif'],'mathtext.fontset':'dejavuserif'})
 th=1/30.; Lm=66
-cases=[('vacancy cluster','area removed, $C>0$',vacancy),('inserted island','area added, $C<0$',island),
+cases=[('vacancy cluster','area removed, $C>0$',vacancy),('inserted island','area added, $C<0$',island_coherent),
        ('rotated patch','torque, ${\\rm Im}\\,C\\neq0$',rotpatch),('vacancy + island pair','$\\sum C\\approx0$ (dipole)',neutral),
        ('edge dislocation','Burgers $b\\neq0$',edge)]
 verdict=['lens, $\\varphi_m=-90^\\circ$\nswallow radius $\\sqrt{2}R$','lens, $\\varphi_m=+90^\\circ$\nswallow radius $\\sqrt{2}R$','lens, $\\varphi_m=180^\\circ$\nswallow radius $2R$','no lens: local only\n(field $\\sim 1/\\bar z^{2}$)','not a lens: moiré\ndislocation $B=A^{-1}b$']
@@ -46,4 +46,4 @@ for j,(nm,sub,fn) in enumerate(cases):
     print(nm,'C=',np.round(C,2),'R=',np.round(np.sqrt(abs(C)/th),1) if C!=0 else 0)
 fig.text(0.008,0.66,'atomic\nlayer',rotation=90,fontsize=7.5,va='center',ha='left')
 fig.text(0.008,0.30,'twisted\nmoiré',rotation=90,fontsize=7.5,va='center',ha='left')
-fig.savefig('atomic_defects.pdf'); fig.savefig('atomic_defects.png',dpi=220)
+fig.savefig('fig0.pdf'); fig.savefig('fig0.png',dpi=220)
