@@ -7,7 +7,7 @@ def bonds(X,cut=0.72):
 def radial(z,C):
     # area-preserving radial map with far field -C/conj(z): r'^2 = r^2 - 2C
     r=np.abs(z); rn=np.sqrt(np.maximum(r**2-2*C,0)); return z/np.maximum(r,1e-12)*rn
-def vacancy(X,rh=4.2,close=0.7,c0=0j):
+def vacancy(X,rh=6.4,close=0.3,c0=0j):
     z=X[:,0]+1j*X[:,1]-c0; k=np.abs(z)>rh; C=close*rh**2/2           # removed area pi rh^2; far charge C (partially closed iris)
     zn=radial(z[k],C)+c0; tag=np.zeros(k.sum(),int); tag[np.abs(z[k])<rh+1.2]=1
     return np.c_[zn.real,zn.imag],C,tag
@@ -23,7 +23,7 @@ def rotpatch(X,rh=5.0,phi=np.radians(11)):
     zn=z*np.exp(1j*ang); tag=(r<rh).astype(int)*2
     return np.c_[zn.real,zn.imag],-1j*c,tag                          # C = -i c  (delta u = -C/zbar = i c z/|z|^2, ccw)
 def neutral(X,sep=10.0):
-    Y,C1,t1=vacancy(X,rh=4.0,close=0.7,c0=-sep)
+    Y,C1,t1=vacancy(X,rh=6.1,close=0.3,c0=-sep)
     Z,C2,t2=island_coherent(Y,Cabs=C1,e=0.2,c0=sep+0j)
     tag=np.where(t2==2,2,t1)
     return Z,C1+C2,tag
