@@ -1,0 +1,35 @@
+bg 72 0.1 0 exit 0
+bg 72 0.1 60 exit 0
+bg 72 0.3 0 exit 0
+bg 72 0.3 60 exit 0
+bg 150 0.1 0 exit 0
+bg 150 0.1 60 exit 0
+bg 150 0.3 0 exit 0
+bg 150 0.3 60 exit 0
+4 0 0.1 0 AA exit 0
+4 0 0.1 0 GEN exit 0
+4 180 0.1 0 AA exit 0
+4 180 0.1 0 GEN exit 0
+4 0 0.1 60 AA exit 0
+4 0 0.1 60 GEN exit 0
+4 180 0.1 60 AA exit 0
+4 180 0.1 60 GEN exit 0
+4 0 0.3 0 AA exit 0
+4 0 0.3 0 GEN exit 0
+4 180 0.3 0 AA exit 0
+4 180 0.3 0 GEN exit 0
+4 0 0.3 60 AA exit 0
+4 0 0.3 60 GEN exit 0
+4 180 0.3 60 AA exit 0
+4 180 0.3 60 GEN exit 0
+24 0 0.1 0 AA exit 0
+24 0 0.1 0 GEN exit 0
+24 180 0.1 0 AA exit 0
+24 180 0.1 0 GEN exit 0
+24 0 0.1 60 AA exit 0
+24 0 0.1 60 GEN exit 0
+24 180 0.1 60 AA exit 0
+24 180 0.1 60 GEN exit 0
+24 0 0.3 0 AA exit 0
+24 0 0.3 0 GEN exit 0
+24 180 0.3 0 AA exit 0
